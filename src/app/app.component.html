@@ -1,0 +1,90 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<h1>Welcome to Angular</h1>
+<button (click)="btnclick()">Click Me</button>
+<hr>
+<h2>Structrral derivates</h2>
+<div *ngIf="clickonngif" ><h3>Example of ng IF with ture</h3></div>
+<div *ngIf="clickonngif2" >Example of ng IF with false </div>
+<h2>Structrral derivates</h2>
+<div [ngStyle]="{'color':'red'}"><h3>Example of ng Style</h3></div>
+<h2>Using ngIF</h2>
+<input type="radio" name="click" value="true" (click)="changevalue(true)">true
+<input type="radio" name="click" value="false" (click)="changevalue(false)">False
+<div *ngIf="isvalid">
+  <p>This is valid</p>
+</div>
+<div *ngIf="!isvalid">
+  <p>This is not valid</p>
+</div>
+<h2>Using ngIF with else</h2>
+<input type="radio" name="click" value="true" (click)="changevalue(true)">true
+<input type="radio" name="click" value="false" (click)="changevalue(false)">False
+<div *ngIf="isvalid; else elseblock">
+  <p>This is valid</p>
+</div>
+<ng-template #elseblock>
+<div>
+  <p>This is not valid</p>
+</div>
+</ng-template>
+<h2>Using ng Switch</h2>
+<select (change)="setvalue($event)">
+  <option value="">--select--</option>
+  <option value="one">one</option>
+  <option value="two">two</option>
+  <option value="three">three</option>
+  <option value="Another">Another</option>
+</select>
+  <div [ngSwitch]="choose">
+    <h3 *ngSwitchCase="'one'">First</h3>
+    <h3 *ngSwitchCase="'two'">Second</h3>
+    <h3 *ngSwitchCase="'three'">Third</h3>
+    <h3 *ngSwitchDefault>default</h3>
+  </div>
+  <hr>
+  <h2>Using ng For</h2>
+  <ul>
+    <li *ngFor="let student of Students ; let i=index ; let f=first ; let l=last ; let ev=even ; let od=odd">
+     {{i+1}} - {{student.name}} - {{f}} - {{l}} - {{ev}} - {{od}}
+    </li>
+  </ul>
+  <hr>
+  <h2>Track by Example</h2>
+  <table border="1">
+    <tr *ngFor="let s of students; trackBy:trackbystudentid">
+    <td>{{s.studentID}}</td>
+    <td>{{s.name}}</td>
+    <td>{{s.gender}}</td>
+    <td>{{s.age}}</td>
+  </tr>
+  </table>
+      <button (click)="getmorestudents()">Get more Students</button>
+  <hr>
+  <h2>Grouping with *ngFor</h2>
+  <ul *ngFor="let group of Countrydetails">
+    <li>{{group.country}}
+    </li>
+    <ul>
+      <li *ngFor="let person of group.people">{{person.name}}</li>
+    </ul>
+  </ul>
+  <hr>
+  <h2>ngStyle Example</h2>
+  <ul *ngFor="let person of people">
+    <li [ngStyle]="{'color':getcolor(person.country)}">
+      {{person.name}} - {{person.country}}
+    </li>
+  </ul>
+  <hr>
+  <h2>Using ng Class with String</h2>
+  <p [ngClass]="'one two three'">Using ng Class with string examples</p>
+  
+
